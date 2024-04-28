@@ -13761,8 +13761,8 @@ static int cmd_anal_all(RCore *core, const char *input) {
 						logline (core, 70, "Skipping function emulation in debugger mode (aaef)");
 						// nothing to do
 					} else {
-						bool use_pcache = false;
-						const bool io_cache = r_config_get_i (core->config, "io.pcache");
+						bool use_pcache = true; // false;
+						const bool io_cache = r_config_get_b (core->config, "io.pcache");
 						if (use_pcache) {
 							r_config_set_b (core->config, "io.pcache", true);
 						}
